@@ -58,43 +58,65 @@ nav a:hover{
   opacity:0.8;
 }
 
-/* CONTENEDOR (COLLAGE ARREGLADO) */
+/* CONTENEDOR */
 .container{
   display:flex;
   justify-content:center;
+  align-items:center;
   padding:50px 20px;
   position:relative;
   overflow:hidden;
-
-  /* IMAGEN BASE */
-  background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.80)),
-    url('https://res.cloudinary.com/deod0oalc/image/upload/9e4a9d3f-a5d8-4d66-80bd-86908a1adf54_agiwts.jpg')
-    center/cover no-repeat;
+  min-height:450px;
 }
 
-/* CAPA 2 */
-.container::before{
-  content:"";
+/* 🔥 COLLAGE REAL */
+.bg{
   position:absolute;
   inset:0;
-  background:
-    url('https://res.cloudinary.com/deod0oalc/image/upload/70dddf35-39d3-4891-a764-2997a45dddf2_orvzhk.jpg')
-    left center/50% 100% no-repeat;
-  opacity:0.7;
-  pointer-events:none;
+  z-index:0;
 }
 
-/* CAPA 3 */
+/* IMAGEN 1 */
+.bg1{
+  position:absolute;
+  top:0;
+  left:0;
+  width:55%;
+  height:60%;
+  background:url('https://res.cloudinary.com/deod0oalc/image/upload/9e4a9d3f-a5d8-4d66-80bd-86908a1adf54_agiwts.jpg')
+  center/cover no-repeat;
+}
+
+/* IMAGEN 2 */
+.bg2{
+  position:absolute;
+  top:0;
+  right:0;
+  width:55%;
+  height:60%;
+  background:url('https://res.cloudinary.com/deod0oalc/image/upload/70dddf35-39d3-4891-a764-2997a45dddf2_orvzhk.jpg')
+  center/cover no-repeat;
+}
+
+/* IMAGEN 3 */
+.bg3{
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:70%;
+  height:55%;
+  background:url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg')
+  center/cover no-repeat;
+}
+
+/* OSCURECER FONDO */
 .container::after{
   content:"";
   position:absolute;
   inset:0;
-  background:
-    url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg')
-    right center/50% 100% no-repeat;
-  opacity:0.7;
-  pointer-events:none;
+  background:rgba(0,0,0,0.55);
+  z-index:1;
 }
 
 /* CARD */
@@ -132,6 +154,7 @@ nav a:hover{
   transition:0.3s;
 }
 
+/* WHATSAPP */
 .wa{
   background:#25D366;
   color:white;
@@ -142,6 +165,7 @@ nav a:hover{
   transform:scale(1.03);
 }
 
+/* LLAMAR */
 .call{
   background:black;
   color:white;
@@ -151,6 +175,7 @@ nav a:hover{
   transform:scale(1.03);
 }
 
+/* MAIL */
 .mail{
   background:#cfcfcf;
   color:black;
@@ -161,7 +186,7 @@ nav a:hover{
   transform:scale(1.03);
 }
 
-/* WHATSAPP FLOTANTE */
+/* BOTÓN FLOTANTE */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
@@ -211,6 +236,14 @@ nav a:hover{
 
 <div class="container">
 
+  <!-- 🔥 COLLAGE -->
+  <div class="bg">
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+    <div class="bg3"></div>
+  </div>
+
+  <!-- CARD -->
   <div class="card">
 
     <h2>Comuníquese con nosotros</h2>
