@@ -39,7 +39,7 @@ nav a:hover{
   opacity:0.7;
 }
 
-/* HERO CON PARALLAX */
+/* HERO EJECUTIVO */
 .hero{
   height:85vh;
   display:flex;
@@ -48,20 +48,18 @@ nav a:hover{
   text-align:center;
   position:relative;
 
-  background-image:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7');
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
+  /* 🔥 FONDO NUEVO: NEGRO + AZUL PREMIUM */
+  background: linear-gradient(135deg, #000000, #111827, #1d4ed8);
 
   color:white;
   overflow:hidden;
 }
 
-/* OVERLAY */
+/* OVERLAY SUAVE (EFECTO PROFESIONAL) */
 .overlay{
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.65);
+  background: radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 60%);
   z-index:1;
 }
 
@@ -73,6 +71,7 @@ nav a:hover{
 .hero-logo img{
   height:240px;
   margin-bottom:20px;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
 }
 
 h1{
@@ -119,11 +118,6 @@ p{
 @media(max-width:600px){
   .hero-logo img{height:160px;}
   h1{font-size:30px;}
-
-  /* IMPORTANTE: desactiva parallax en móvil */
-  .hero{
-    background-attachment:scroll;
-  }
 }
 </style>
 </head>
