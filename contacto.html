@@ -66,24 +66,14 @@ nav a:hover{
   padding:50px 20px;
   position:relative;
 
-  /* 🔥 COLLAGE */
-  background-image:
-    url('https://res.cloudinary.com/deod0oalc/image/upload/9e4a9d3f-a5d8-4d66-80bd-86908a1adf54_agiwts.jpg'),
-    url('https://res.cloudinary.com/deod0oalc/image/upload/70dddf35-39d3-4891-a764-2997a45dddf2_orvzhk.jpg'),
-    url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg');
+  /* 🔥 COLLAGE PRO (SIN APLASTAR) */
+  background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+    url('https://res.cloudinary.com/deod0oalc/image/upload/9e4a9d3f-a5d8-4d66-80bd-86908a1adf54_agiwts.jpg') center/cover no-repeat,
+    url('https://res.cloudinary.com/deod0oalc/image/upload/70dddf35-39d3-4891-a764-2997a45dddf2_orvzhk.jpg') center/cover no-repeat,
+    url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg') center/cover no-repeat;
 
-  background-size: 50% 50%, 50% 50%, 100% 100%;
-  background-position: left top, right top, center bottom;
-  background-repeat: no-repeat;
-}
-
-/* 🔥 OVERLAY OSCURO */
-.container::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,0.75);
-  z-index:1;
+  background-blend-mode: overlay;
 }
 
 /* CARD */
