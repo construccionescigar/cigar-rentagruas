@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Renta de Grúas CIGAR</title>
+<title>CIGAR | Inicio</title>
 
 <style>
 *{
@@ -13,15 +13,11 @@
   font-family:Arial,sans-serif;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
   background:#f4f6f8;
 }
 
-/* NAV estilo empresa (como tu página principal) */
+/* NAV (MISMO EN TODAS LAS PÁGINAS) */
 nav{
   background:#000;
   padding:15px;
@@ -41,7 +37,6 @@ nav a{
 }
 
 nav a:hover{
-  color:#ffffff;
   opacity:0.7;
 }
 
@@ -53,7 +48,7 @@ nav a:hover{
   align-items:center;
   text-align:center;
   position:relative;
-  background:url('https://images.unsplash.com/photo-1581091870620-2f5b3f6b3b4a') center/cover;
+  background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd') center/cover;
   color:white;
 }
 
@@ -61,7 +56,7 @@ nav a:hover{
   content:'';
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.70);
+  background:rgba(0,0,0,0.65);
 }
 
 .hero-content{
@@ -76,7 +71,6 @@ nav a:hover{
 
 h1{
   font-size:44px;
-  letter-spacing:1px;
 }
 
 p{
@@ -103,69 +97,24 @@ p{
   color:black;
 }
 
-/* SECCIONES */
-.section{
-  padding:80px 20px;
-  text-align:center;
-  background:#ffffff;
-}
-
-.section.dark{
-  background:#111;
-  color:white;
-}
-
-.section h2{
-  font-size:32px;
-  margin-bottom:20px;
-}
-
-.section p{
-  max-width:800px;
-  margin:auto;
-  line-height:1.6;
-  color:inherit;
-  opacity:0.9;
-}
-
-/* CONTACTO */
-.contact-box{
-  margin-top:20px;
-}
-
-.contact-box a{
-  display:inline-block;
-  padding:12px 20px;
-  border:2px solid white;
-  color:white;
-  text-decoration:none;
-  margin-top:10px;
-}
-
-.contact-box a:hover{
-  background:white;
-  color:black;
-}
-
 @media(max-width:600px){
   .hero-logo img{height:160px;}
   h1{font-size:30px;}
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAV GLOBAL -->
 <nav>
-  <a href="#inicio">Inicio</a>
-  <a href="#info">Información</a>
-  <a href="#contacto">Contacto</a>
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Información</a>
+  <a href="contacto.html">Contacto</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="inicio">
+<section class="hero">
 
   <div class="hero-content">
 
@@ -176,33 +125,11 @@ p{
     <h1>Renta de grúas</h1>
     <p>Calidad, confianza y experiencia en cada proyecto...</p>
 
-    <a class="btn" href="#info">Más información</a>
-    <a class="btn" href="https://wa.me/0000000000">Contactar</a>
+    <a class="btn" href="servicios.html">Más información</a>
+    <a class="btn" href="contacto.html">Contacto</a>
 
   </div>
 
-</section>
-
-<!-- INFO -->
-<section class="section" id="info">
-  <h2>Información</h2>
-  <p>
-    Somos una empresa especializada en renta de grúas y maniobras industriales.
-    Ofrecemos soluciones seguras, eficientes y profesionales para proyectos de
-    carga pesada, construcción y logística.
-  </p>
-</section>
-
-<!-- CONTACTO -->
-<section class="section dark" id="contacto">
-  <h2>Contacto</h2>
-  <p>
-    Contáctanos para cotizaciones rápidas y atención inmediata.
-  </p>
-
-  <div class="contact-box">
-    <a href="https://wa.me/0000000000">Enviar WhatsApp</a>
-  </div>
 </section>
 
 </body>
