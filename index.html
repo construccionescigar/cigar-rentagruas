@@ -12,25 +12,34 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: #0b0b0b;
       color: #ffffff;
     }
 
-    /* HERO */
-    .hero {
-      height: 100vh;
+    /* SECCIONES FULL SCREEN */
+    section {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 20px;
+      padding: 40px 20px;
+    }
+
+    /* HERO */
+    .hero {
       background: radial-gradient(circle at center, #1a1a1a, #000000);
     }
 
     .logo {
-      width: 180px;
+      width: 360px;
+      max-width: 80%;
       margin-bottom: 20px;
     }
 
@@ -68,9 +77,7 @@
 
     /* INFO SECTION */
     .info {
-      padding: 80px 20px;
       background-color: #111111;
-      text-align: center;
     }
 
     .info h2 {
@@ -80,28 +87,43 @@
 
     .info p {
       max-width: 800px;
-      margin: auto;
       color: #cccccc;
       line-height: 1.6;
       font-size: 1.1rem;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .title {
-        font-size: 2rem;
-      }
-
-      .logo {
-        width: 140px;
-      }
+    /* NAV BOTONES ARRIBA (OPCIONAL EJECUTIVO) */
+    .nav {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      z-index: 1000;
     }
+
+    .nav a {
+      margin-left: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav a:hover {
+      border-bottom: 1px solid #fff;
+    }
+
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
+  <div class="nav">
+    <a href="#inicio">Inicio</a>
+    <a href="#info">Información</a>
+  </div>
+
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="inicio">
     <img class="logo" src="https://res.cloudinary.com/deod0oalc/image/upload/LogoCigar_pybcfp.png" alt="Cigar Logo" />
     
     <div class="title">Renta de grúas</div>
