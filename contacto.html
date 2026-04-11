@@ -35,7 +35,7 @@ nav a{
   font-weight:bold;
 }
 
-/* HERO (LOGO NO SE TOCA) */
+/* HERO */
 .hero{
   position:relative;
   text-align:center;
@@ -53,7 +53,16 @@ nav a{
   font-size:40px;
 }
 
-/* 🔥 COLLAGE DE FONDO 4 IMÁGENES */
+/* 🔥 ESLOGAN ROTATIVO */
+#slogan{
+  font-size:18px;
+  margin-top:8px;
+  opacity:1;
+  transition:opacity 0.5s ease;
+  color:#e5e7eb;
+}
+
+/* COLLAGE */
 .collage{
   position:fixed;
   top:0;
@@ -72,24 +81,12 @@ nav a{
   filter:brightness(0.75);
 }
 
-/* IMÁGENES */
-.i1{
-  background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg');
-}
+.i1{background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg');}
+.i2{background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/9e4a9d3f-a5d8-4d66-80bd-86908a1adf54_agiwts.jpg');}
+.i3{background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/70dddf35-39d3-4891-a764-2997a45dddf2_orvzhk.jpg');}
+.i4{background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/6dab0765-8b3a-497b-9d3c-c81397096391_dz5yzg.jpg');}
 
-.i2{
-  background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/9e4a9d3f-a5d8-4d66-80bd-86908a1adf54_agiwts.jpg');
-}
-
-.i3{
-  background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/70dddf35-39d3-4891-a764-2997a45dddf2_orvzhk.jpg');
-}
-
-.i4{
-  background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/6dab0765-8b3a-497b-9d3c-c81397096391_dz5yzg.jpg');
-}
-
-/* OVERLAY GENERAL SUAVE */
+/* OVERLAY */
 body::before{
   content:"";
   position:fixed;
@@ -98,7 +95,7 @@ body::before{
   z-index:1;
 }
 
-/* CARD CENTRADA */
+/* CARD */
 .card{
   position:relative;
   margin:40px auto;
@@ -112,7 +109,6 @@ body::before{
   z-index:2;
 }
 
-/* BOTONES */
 .btn{
   display:flex;
   align-items:center;
@@ -131,7 +127,7 @@ body::before{
 .call{background:black;color:white;}
 .mail{background:#cfcfcf;color:black;}
 
-/* WHATSAPP */
+/* WHATSAPP FLOAT */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
@@ -149,7 +145,6 @@ body::before{
   box-shadow:0 10px 25px rgba(0,0,0,0.3);
   z-index:9999;
 }
-
 </style>
 </head>
 
@@ -163,7 +158,7 @@ body::before{
 </nav>
 </header>
 
-<!-- HERO LOGO -->
+<!-- HERO -->
 <section class="hero">
 
   <div class="hero-logo">
@@ -171,11 +166,15 @@ body::before{
   </div>
 
   <h1>Contacto</h1>
+
+  <!-- ESLOGAN -->
+  <div id="slogan">Estamos listos cuando tú lo estés</div>
+
   <p>Respuesta rápida para servicios de grúas</p>
 
 </section>
 
-<!-- 🔥 COLLAGE DE FONDO -->
+<!-- COLLAGE -->
 <div class="collage">
   <div class="i1"></div>
   <div class="i2"></div>
@@ -189,14 +188,35 @@ body::before{
   <h2>Comuníquese con nosotros</h2>
 
   <a class="btn wa" href="https://wa.me/5217771330689">💬 WhatsApp</a>
-
   <a class="btn call" href="tel:+527771330689">📞 Llamar ahora</a>
-
   <a class="btn mail" href="https://mail.google.com/mail/?view=cm&fs=1&to=gruascr21@gmail.com">✉️ Correo</a>
 
 </div>
 
 <a href="https://wa.me/5217771330689" class="whatsapp-float">💬</a>
+
+<script>
+const slogans = [
+  "Estamos listos cuando tú lo estés",
+  "Respuesta inmediata para tu proyecto",
+  "Cotiza tu servicio en minutos",
+  "Tu proyecto comienza con una llamada"
+];
+
+let i = 0;
+const el = document.getElementById("slogan");
+
+setInterval(() => {
+  el.style.opacity = 0;
+
+  setTimeout(() => {
+    i = (i + 1) % slogans.length;
+    el.textContent = slogans[i];
+    el.style.opacity = 1;
+  }, 400);
+
+}, 3000);
+</script>
 
 </body>
 </html>
