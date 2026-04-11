@@ -100,12 +100,28 @@ h1{
   font-size:44px;
 }
 
-/* 🔥 ESLOGAN ROTATIVO */
-#slogan{
-  font-size:18px;
-  margin-top:10px;
-  opacity:1;
-  transition: opacity 0.5s ease;
+/* 🔥 ESLOGAN IZQUIERDA + DERECHA */
+.slogan-left,
+.slogan-right{
+  position:absolute;
+  top:20px;
+  font-size:24px;
+  font-weight:700;
+  color:white;
+  z-index:3;
+  max-width:40%;
+  text-shadow:0 4px 15px rgba(0,0,0,0.6);
+  transition:opacity 0.5s ease;
+}
+
+.slogan-left{
+  left:25px;
+  text-align:left;
+}
+
+.slogan-right{
+  right:25px;
+  text-align:right;
 }
 
 /* BOTONES */
@@ -147,6 +163,12 @@ h1{
 
   .hero-logo img{height:160px;}
   h1{font-size:30px;}
+
+  .slogan-left,
+  .slogan-right{
+    font-size:16px;
+    max-width:45%;
+  }
 }
 </style>
 </head>
@@ -161,6 +183,10 @@ h1{
 
 <section class="hero">
 
+  <!-- 🔥 ESLOGANES -->
+  <div class="slogan-left" id="sloganLeft"></div>
+  <div class="slogan-right" id="sloganRight"></div>
+
   <div class="hero-content">
 
     <div class="hero-logo">
@@ -168,9 +194,6 @@ h1{
     </div>
 
     <h1>Grúas y Maniobras Nacionales CR</h1>
-
-    <!-- 🔥 ESLOGAN -->
-    <div id="slogan">Elevamos tus proyectos a otro nivel</div>
 
     <a class="btn" href="informacion.html">Más información</a>
     <a class="btn contacto" href="contacto.html">Contacto</a>
@@ -180,23 +203,37 @@ h1{
 </section>
 
 <script>
-const slogans = [
-  "Elevamos tus proyectos a otro nivel",
-  "Precisión y potencia en cada elevación",
-  "Movemos lo pesado, simplificamos lo complejo",
-  "Donde la altura se convierte en solución"
+const left = [
+  "Elevamos tus proyectos",
+  "Movemos lo pesado",
+  "Precisión total",
+  "Soluciones en altura"
+];
+
+const right = [
+  "Seguridad garantizada",
+  "Eficiencia profesional",
+  "Confianza total",
+  "Respuesta inmediata"
 ];
 
 let i = 0;
-const sloganEl = document.getElementById("slogan");
+
+const l = document.getElementById("sloganLeft");
+const r = document.getElementById("sloganRight");
 
 setInterval(() => {
-  sloganEl.style.opacity = 0;
+  l.style.opacity = 0;
+  r.style.opacity = 0;
 
   setTimeout(() => {
-    i = (i + 1) % slogans.length;
-    sloganEl.textContent = slogans[i];
-    sloganEl.style.opacity = 1;
+    i = (i + 1) % left.length;
+
+    l.textContent = left[i];
+    r.textContent = right[i];
+
+    l.style.opacity = 1;
+    r.style.opacity = 1;
   }, 400);
 
 }, 3000);
