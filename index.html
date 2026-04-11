@@ -50,7 +50,6 @@ nav a:hover{
   color:white;
   overflow:hidden;
 
-  /* 🔥 COLLAGE DE IMÁGENES */
   background-image:
     url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg'),
     url('https://res.cloudinary.com/deod0oalc/image/upload/326a0fda-a150-413b-bc8e-5c8cfa88185a_g4uzaz.jpg'),
@@ -67,7 +66,6 @@ nav a:hover{
   background-repeat: no-repeat;
 }
 
-/* OVERLAY OSCURO PREMIUM */
 .hero::before{
   content:"";
   position:absolute;
@@ -79,7 +77,6 @@ nav a:hover{
   z-index:1;
 }
 
-/* EFECTO AZUL SUTIL */
 .hero::after{
   content:"";
   position:absolute;
@@ -103,10 +100,12 @@ h1{
   font-size:44px;
 }
 
-p{
+/* 🔥 ESLOGAN ROTATIVO */
+#slogan{
   font-size:18px;
   margin-top:10px;
-  opacity:0.9;
+  opacity:1;
+  transition: opacity 0.5s ease;
 }
 
 /* BOTONES */
@@ -169,7 +168,9 @@ p{
     </div>
 
     <h1>Grúas y Maniobras Nacionales CR</h1>
-    <p>Servicio profesional, seguro y disponibilidades</p>
+
+    <!-- 🔥 ESLOGAN -->
+    <div id="slogan">Elevamos tus proyectos a otro nivel</div>
 
     <a class="btn" href="informacion.html">Más información</a>
     <a class="btn contacto" href="contacto.html">Contacto</a>
@@ -177,6 +178,29 @@ p{
   </div>
 
 </section>
+
+<script>
+const slogans = [
+  "Elevamos tus proyectos a otro nivel",
+  "Precisión y potencia en cada elevación",
+  "Movemos lo pesado, simplificamos lo complejo",
+  "Donde la altura se convierte en solución"
+];
+
+let i = 0;
+const sloganEl = document.getElementById("slogan");
+
+setInterval(() => {
+  sloganEl.style.opacity = 0;
+
+  setTimeout(() => {
+    i = (i + 1) % slogans.length;
+    sloganEl.textContent = slogans[i];
+    sloganEl.style.opacity = 1;
+  }, 400);
+
+}, 3000);
+</script>
 
 </body>
 </html>
