@@ -41,7 +41,7 @@ nav a:hover{
 
 /* HERO */
 .hero{
-  height:100vh; /* 🔥 FIX PRINCIPAL */
+  height:100vh;
   min-height:100vh;
   display:flex;
   justify-content:center;
@@ -65,38 +65,41 @@ nav a:hover{
     bottom right;
 
   background-repeat: no-repeat;
-
-  /* 🔥 ZOOM SUAVE */
-  animation: zoomHero 18s ease-in-out infinite alternate;
 }
 
-/* 🔥 ANIMACIÓN ZOOM */
-@keyframes zoomHero {
-  0%{
-    background-size: 50% 50%;
-  }
-  100%{
-    background-size: 55% 55%;
-  }
+/* 🌟 NUEVO EFECTO: LUZ SUAVE DESLIZANTE */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:-50%;
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(255,255,255,0.08) 50%,
+    transparent 60%
+  );
+  transform: rotate(10deg);
+  animation: lightMove 8s linear infinite;
+  z-index:1;
 }
 
+/* OSCURECIDO PROFESIONAL */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(
-    rgba(0,0,0,0.75),
-    rgba(0,0,0,0.85)
-  );
+  background: rgba(0,0,0,0.72);
   z-index:1;
 }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: radial-gradient(circle at center, rgba(29,78,216,0.25), transparent 70%);
-  z-index:1;
+/* ANIMACIÓN LUZ */
+@keyframes lightMove{
+  0%{
+    transform: translateX(-60%) rotate(10deg);
+  }
+  100%{
+    transform: translateX(60%) rotate(10deg);
+  }
 }
 
 .hero-content{
@@ -114,7 +117,7 @@ h1{
   font-size:44px;
 }
 
-/* 🔥 ESLOGAN IZQUIERDA + DERECHA */
+/* ESLOGAN IZQ + DER */
 .slogan-left,
 .slogan-right{
   position:absolute;
@@ -173,7 +176,6 @@ h1{
   .hero{
     background-size: cover;
     background-position: center;
-    animation:none; /* 🔥 evita bug en móviles */
   }
 
   .hero-logo img{height:160px;}
@@ -198,7 +200,6 @@ h1{
 
 <section class="hero">
 
-  <!-- ESLOGANES -->
   <div class="slogan-left" id="sloganLeft"></div>
   <div class="slogan-right" id="sloganRight"></div>
 
