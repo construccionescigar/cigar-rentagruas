@@ -50,45 +50,38 @@ nav a{
   font-weight:bold;
 }
 
-/* HEADER */
+/* HEADER (🔧 AJUSTADO) */
 .header{
   position:relative;
-  padding:110px 20px 90px; /* 🔥 más aire arriba */
+  padding:40px 20px 120px 20px; /* 🔥 MÁS ARRIBA Y MÁS AIRE ABAJO */
   text-align:center;
 }
 
-/* 🔥 SLOGANS CON CUADRO (IGUAL QUE INDEX) */
+/* ESLOGANES */
 .slogan-left,
 .slogan-right{
   position:absolute;
   top:20px;
-  font-size:18px;
+  font-size:24px;
   font-weight:700;
-  color:white;
+  color:#ffffff;
   z-index:3;
-  max-width:42%;
-  text-shadow:0 3px 10px rgba(0,0,0,0.6);
+  max-width:40%;
+  text-shadow:0 4px 15px rgba(0,0,0,0.6);
   transition:opacity 0.5s ease;
-
-  /* CUADRO PREMIUM */
-  background:rgba(0,0,0,0.45);
-  padding:10px 16px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,0.15);
-  backdrop-filter:blur(4px);
 }
 
 .slogan-left{
-  left:20px;
+  left:25px;
   text-align:left;
 }
 
 .slogan-right{
-  right:20px;
+  right:25px;
   text-align:right;
 }
 
-/* HEADER CARD */
+/* CARD HEADER */
 .header-card{
   display:inline-block;
   background:rgba(0,0,0,0.65);
@@ -96,6 +89,8 @@ nav a{
   border-radius:12px;
   border:1px solid rgba(255,255,255,0.1);
   backdrop-filter:blur(4px);
+
+  margin-top:20px; /* 🔥 lo empuja un poco hacia abajo del top */
 }
 
 .header h1{
@@ -105,7 +100,7 @@ nav a{
 
 /* SECTION */
 .section{
-  padding:70px 20px;
+  padding:40px 20px 70px 20px; /* 🔥 menos espacio arriba, más natural */
   text-align:center;
 }
 
@@ -114,7 +109,7 @@ nav a{
   margin-bottom:20px;
 }
 
-/* PARÁGRAFO */
+/* TEXTO */
 .section p{
   max-width:800px;
   margin:auto;
@@ -127,7 +122,7 @@ nav a{
   border-radius:12px;
   border:1px solid rgba(255,255,255,0.1);
 
-  margin-bottom:80px;
+  margin-bottom:50px;
 }
 
 /* CARDS */
@@ -136,7 +131,6 @@ nav a{
   flex-wrap:wrap;
   justify-content:center;
   gap:20px;
-  margin-top:10px;
 }
 
 .card{
@@ -173,11 +167,11 @@ nav a{
 
   .slogan-left,
   .slogan-right{
-    font-size:14px;
-    max-width:48%;
-    padding:8px 12px;
+    font-size:16px;
+    max-width:45%;
   }
 }
+
 </style>
 </head>
 
@@ -189,10 +183,8 @@ nav a{
   <a href="contacto.html">Contacto</a>
 </nav>
 
-<!-- HEADER -->
 <div class="header">
 
-  <!-- SLOGANS -->
   <div class="slogan-left" id="sloganLeft"></div>
   <div class="slogan-right" id="sloganRight"></div>
 
@@ -200,9 +192,9 @@ nav a{
     <h1>Nuestra Empresa</h1>
     <p>Experiencia, seguridad y profesionalismo en cada maniobra</p>
   </div>
+
 </div>
 
-<!-- INTRO -->
 <section class="section">
   <h2>¿Quiénes somos?</h2>
 
