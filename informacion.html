@@ -14,8 +14,23 @@
   font-family:Arial,sans-serif;
 }
 
+/* 🔥 FONDO GLOBAL (AHORA SÍ ES TODA LA PÁGINA) */
 body{
-  background:#0b0f14;
+  background:url('https://res.cloudinary.com/deod0oalc/image/upload/Gemini_Generated_Image_3zt7fk3zt7fk3zt7_kuaitf.png');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  position:relative;
+  color:white;
+}
+
+/* overlay global elegante */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:-1;
 }
 
 /* NAV */
@@ -36,40 +51,13 @@ nav a{
   font-weight:bold;
 }
 
-/* 🔥 HEADER SIN RECORTE (contain real) */
+/* HEADER ahora transparente (NO fondo propio) */
 .header{
   position:relative;
-  color:white;
-  padding:140px 20px;
+  padding:90px 20px;
   text-align:center;
-
-  /* base elegante */
-  background-color:#0b0f14;
-
-  /* imagen SIN recorte */
-  background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/Gemini_Generated_Image_3zt7fk3zt7fk3zt7_kuaitf.png');
-  background-size:contain;      /* 🔥 clave: no recorta */
-  background-repeat:no-repeat;
-  background-position:center;
-
-  min-height:500px;
 }
 
-/* overlay suave para contraste */
-.header::before{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background:rgba(0,0,0,0.35);
-}
-
-.header > *{
-  position:relative;
-  z-index:1;
-}
-
-/* CUADRO HEADER */
 .header-card{
   display:inline-block;
   background:rgba(0,0,0,0.65);
@@ -79,11 +67,9 @@ nav a{
   backdrop-filter:blur(4px);
 }
 
-/* TEXTO HEADER */
 .header h1{
   font-size:40px;
   margin-bottom:10px;
-  letter-spacing:1px;
 }
 
 .header p{
@@ -111,10 +97,10 @@ nav a{
   font-size:17px;
   color:#d1d5db;
 
-  background:rgba(255,255,255,0.04);
+  background:rgba(0,0,0,0.55);
   padding:20px;
   border-radius:12px;
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.1);
 }
 
 /* CARDS PREMIUM */
@@ -131,8 +117,8 @@ nav a{
   padding:22px;
   border-radius:12px;
 
-  background:linear-gradient(145deg,#0f1720,#05070a);
-  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(0,0,0,0.75);
+  border:1px solid rgba(255,255,255,0.15);
 
   box-shadow:0 10px 25px rgba(0,0,0,0.6);
   transition:0.3s;
@@ -186,12 +172,10 @@ nav a{
 
 <!-- HEADER -->
 <div class="header">
-
   <div class="header-card">
     <h1>Nuestros Servicios</h1>
     <p>Soluciones profesionales en renta de grúas y maniobras industriales</p>
   </div>
-
 </div>
 
 <!-- INTRO -->
