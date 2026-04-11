@@ -71,17 +71,10 @@ nav a{
   transition:opacity 0.5s ease;
 }
 
-.slogan-left{
-  left:25px;
-  text-align:left;
-}
+.slogan-left{ left:25px; text-align:left; }
+.slogan-right{ right:25px; text-align:right; }
 
-.slogan-right{
-  right:25px;
-  text-align:right;
-}
-
-/* CARD HEADER */
+/* HEADER CARD */
 .header-card{
   display:inline-block;
   background:rgba(0,0,0,0.65);
@@ -97,9 +90,9 @@ nav a{
   margin-bottom:10px;
 }
 
-/* SECTION (SIN CAMBIOS DE ESPACIO VERTICAL GLOBAL) */
+/* SECTION */
 .section{
-  padding:40px 20px 70px 20px;
+  padding:40px 20px 110px 20px; /* 🔥 más espacio abajo del texto */
   text-align:center;
 }
 
@@ -108,7 +101,7 @@ nav a{
   margin-bottom:20px;
 }
 
-/* TEXTO (SIN TOCAR ESPACIO SUPERIOR) */
+/* TEXTO (AQUÍ ESTÁ EL CAMBIO REAL) */
 .section p{
   max-width:800px;
   margin:auto;
@@ -121,17 +114,17 @@ nav a{
   border-radius:12px;
   border:1px solid rgba(255,255,255,0.1);
 
-  margin-bottom:60px;
+  margin-bottom:90px; /* 🔥 ESTA ES LA SEPARACIÓN REAL QUE PEDÍAS */
 }
 
-/* CARDS — SOLO AJUSTE REAL */
+/* CARDS */
 .cards{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:20px;
 
-  margin-top:10px; /* 🔥 AJUSTE CORRECTO: sube visualmente los cuadros */
+  margin-top:0; /* sin subir ni bajar los cuadros */
 }
 
 .card{
@@ -251,10 +244,8 @@ setInterval(() => {
 
   setTimeout(() => {
     i = (i + 1) % left.length;
-
     l.textContent = left[i];
     r.textContent = right[i];
-
     l.style.opacity = 1;
     r.style.opacity = 1;
   }, 400);
