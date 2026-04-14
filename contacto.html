@@ -28,11 +28,19 @@ header{
   z-index:10;
 }
 
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
 nav a{
   color:white;
   text-decoration:none;
-  margin:0 15px;
+  margin:0 10px;
   font-weight:bold;
+  font-size:16px;
 }
 
 /* HERO */
@@ -46,14 +54,17 @@ nav a{
 
 .hero-logo img{
   height:220px;
+  max-width:90%;
+  object-fit:contain;
   margin-bottom:10px;
 }
 
 .hero h1{
   font-size:40px;
+  padding:0 10px;
 }
 
-/* 🔥 SLOGAN PREMIUM (CUADRO ELEGANTE) */
+/* SLOGAN */
 #slogan{
   display:inline-block;
   margin-top:14px;
@@ -77,6 +88,7 @@ nav a{
   font-size:18px;
   margin-top:10px;
   color:#e5e7eb;
+  padding:0 10px;
 }
 
 /* COLLAGE */
@@ -166,6 +178,48 @@ body::before{
   box-shadow:0 10px 25px rgba(0,0,0,0.3);
   z-index:9999;
 }
+
+/* 🔥 RESPONSIVE REAL */
+@media(max-width:768px){
+
+  nav{
+    flex-direction:column;
+  }
+
+  nav a{
+    font-size:14px;
+    margin:5px 0;
+  }
+
+  .hero h1{
+    font-size:26px;
+  }
+
+  .hero-logo img{
+    height:160px;
+  }
+
+  #slogan{
+    font-size:18px;
+    padding:10px 14px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .card{
+    width:90%;
+    padding:25px 20px;
+  }
+
+  .whatsapp-float{
+    width:55px;
+    height:55px;
+    font-size:24px;
+  }
+}
+
 </style>
 </head>
 
@@ -191,7 +245,6 @@ body::before{
 
   <p>Respuesta rápida para servicios de grúas</p>
 
-  <!-- 🔥 SLOGAN PREMIUM -->
   <div id="slogan">Estamos listos cuando tú lo estés</div>
 
 </section>
