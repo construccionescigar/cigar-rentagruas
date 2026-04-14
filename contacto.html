@@ -15,15 +15,19 @@
 }
 
 body{
-  background:#0b0f14;
+  background:
+    radial-gradient(circle at top, rgba(37,211,102,0.10), transparent 45%),
+    radial-gradient(circle at bottom, rgba(255,255,255,0.03), transparent 55%),
+    #0b0f14;
+
   color:white;
 }
 
 /* NAV */
 nav{
-  background:rgba(0,0,0,0.85);
-  backdrop-filter:blur(10px);
-  padding:12px 20px;
+  background:rgba(0,0,0,0.75);
+  backdrop-filter:blur(12px);
+  padding:14px 20px;
   position:sticky;
   top:0;
   z-index:1000;
@@ -51,25 +55,26 @@ nav a:hover{
 /* HERO */
 .hero{
   text-align:center;
-  padding:70px 20px 30px;
+  padding:80px 20px 30px;
 }
 
 .hero-logo img{
-  height:170px;
+  height:160px;
   max-width:90%;
   margin-bottom:10px;
-  filter:drop-shadow(0 10px 25px rgba(0,0,0,0.5));
+  filter:drop-shadow(0 15px 30px rgba(0,0,0,0.6));
 }
 
 .hero h1{
   font-size:42px;
-  font-weight:800;
+  font-weight:900;
   margin-bottom:10px;
 }
 
 .hero p{
-  opacity:0.8;
+  opacity:0.85;
   font-size:16px;
+  color:#cbd5e1;
 }
 
 /* BADGE */
@@ -79,27 +84,31 @@ nav a:hover{
   padding:10px 16px;
   border-radius:50px;
   background:rgba(37,211,102,0.12);
-  border:1px solid rgba(37,211,102,0.4);
+  border:1px solid rgba(37,211,102,0.35);
   color:#25D366;
-  font-weight:600;
+  font-weight:700;
   font-size:14px;
+  box-shadow:0 0 25px rgba(37,211,102,0.10);
 }
 
 /* CARD */
 .card{
-  max-width:420px;
-  margin:40px auto;
+  max-width:440px;
+  margin:45px auto;
   background:rgba(255,255,255,0.04);
   border:1px solid rgba(255,255,255,0.08);
   border-radius:16px;
-  padding:25px;
+  padding:28px;
   text-align:center;
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
+  box-shadow:0 25px 50px rgba(0,0,0,0.45);
 }
 
 .card h2{
-  margin-bottom:15px;
+  margin-bottom:18px;
   font-size:20px;
+  font-weight:800;
+  color:white;
 }
 
 /* BUTTONS */
@@ -110,11 +119,11 @@ nav a:hover{
   gap:10px;
 
   width:100%;
-  padding:14px;
+  padding:15px;
   margin:10px 0;
   border-radius:10px;
   text-decoration:none;
-  font-weight:700;
+  font-weight:800;
   font-size:15px;
   transition:0.3s;
 }
@@ -122,10 +131,12 @@ nav a:hover{
 .wa{
   background:#25D366;
   color:white;
+  box-shadow:0 10px 25px rgba(37,211,102,0.25);
 }
 
 .wa:hover{
   background:#1ebe5d;
+  transform:translateY(-2px);
 }
 
 .call{
@@ -134,10 +145,18 @@ nav a:hover{
   border:1px solid rgba(255,255,255,0.15);
 }
 
+.call:hover{
+  border-color:#25D366;
+}
+
 .mail{
-  background:rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.06);
   color:white;
-  border:1px solid rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.12);
+}
+
+.mail:hover{
+  border-color:rgba(37,211,102,0.4);
 }
 
 /* FLOAT WHATSAPP */
@@ -145,8 +164,8 @@ nav a:hover{
   position:fixed;
   bottom:20px;
   right:20px;
-  width:60px;
-  height:60px;
+  width:62px;
+  height:62px;
   background:#25D366;
   color:white;
   border-radius:50%;
@@ -155,8 +174,13 @@ nav a:hover{
   justify-content:center;
   font-size:28px;
   text-decoration:none;
-  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  box-shadow:0 10px 25px rgba(0,0,0,0.35);
   z-index:9999;
+  transition:0.3s;
+}
+
+.whatsapp-float:hover{
+  transform:scale(1.08);
 }
 
 /* RESPONSIVE */
@@ -171,7 +195,7 @@ nav a:hover{
   }
 
   .hero-logo img{
-    height:130px;
+    height:120px;
   }
 
   .card{
@@ -199,18 +223,18 @@ nav a:hover{
 
   <h1>Contacto</h1>
 
-  <p>Atención rápida para renta de grúas y maniobras industriales</p>
+  <p>Atención profesional en renta de grúas y maniobras industriales</p>
 
-  <div class="badge">⚡ Respuesta inmediata • 24/7 disponible</div>
+  <div class="badge">⚡ Respuesta rápida • Servicio Eficaz</div>
 
 </section>
 
 <div class="card">
 
-  <h2>Habla con nosotros</h2>
+  <h2>Comuníquese con nosotros</h2>
 
   <a class="btn wa" href="https://wa.me/5217771330689" target="_blank">
-    💬 WhatsApp
+    💬 WhatsApp directo
   </a>
 
   <a class="btn call" href="tel:+527771330689">
