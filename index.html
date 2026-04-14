@@ -58,34 +58,39 @@ nav a:hover{
   justify-content:center;
   align-items:center;
   text-align:center;
+
+  background-color:#000;
 }
 
-/* 🔥 FONDO CONTROLADO (ESTE ES EL FIX REAL) */
+/* 🔥 FONDO PRO CORREGIDO */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
 
   background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg');
+
   background-size:cover;
 
-  /* 🔥 CLAVE: mejora encuadre */
-  background-position:center 35%;
+  /* 🔥 ESTE ES EL PUNTO CLAVE */
+  background-position:50% 20%;
 
   background-repeat:no-repeat;
 
-  /* evita look “lavado” */
-  transform:scale(1.02);
+  transform:scale(1.08);
+
+  filter:contrast(1.1) saturate(1.05) brightness(0.85);
 }
 
-/* OVERLAY SUAVE (NO OPACA DEMASIADO) */
+/* OVERLAY SUAVE (NO MATA LA IMAGEN) */
 .hero::after{
   content:"";
   position:absolute;
   inset:0;
+
   background:linear-gradient(
     180deg,
-    rgba(0,0,0,0.40),
+    rgba(0,0,0,0.35),
     rgba(0,0,0,0.75)
   );
 }
@@ -132,7 +137,6 @@ nav a:hover{
   line-height:1.05;
 }
 
-/* SUBTEXTO */
 .sub{
   font-size:18px;
   opacity:0.9;
@@ -163,6 +167,7 @@ nav a:hover{
 
 .btn.primary:hover{
   background:#1ebe5d;
+  transform:translateY(-2px);
 }
 
 .btn.secondary{
@@ -206,10 +211,6 @@ nav a:hover{
 
   .sub{
     font-size:15px;
-  }
-
-  .hero::before{
-    background-position:center; /* ajuste móvil */
   }
 }
 
