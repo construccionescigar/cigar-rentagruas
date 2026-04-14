@@ -14,7 +14,7 @@
   font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* 🔥 FONDO */
+/* 🔥 BASE */
 body{
   min-height:100vh;
   position:relative;
@@ -22,21 +22,41 @@ body{
   overflow-x:hidden;
 }
 
-/* fondo elegante */
+/* =========================
+   🔥 FONDO PRO (IMAGEN COMPLETA)
+   ========================= */
+
+/* capa BORROSA (relleno elegante) */
 body::before{
   content:"";
   position:fixed;
   inset:0;
 
-  background-image:url("https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=80");
+  background-image:url("https://res.cloudinary.com/deod0oalc/image/upload/5d02ef40-1642-4a3f-b3ea-05ee9ca98ddc_age4vr.jpg");
   background-size:cover;
   background-position:center;
-  filter:brightness(0.35);
+  filter:blur(40px) brightness(0.4);
+  transform:scale(1.2);
+
+  z-index:-3;
+}
+
+/* imagen PRINCIPAL completa */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background-image:url("https://res.cloudinary.com/deod0oalc/image/upload/5d02ef40-1642-4a3f-b3ea-05ee9ca98ddc_age4vr.jpg");
+  background-size:contain; /* 👈 CLAVE (NO RECORTE) */
+  background-position:center;
+  background-repeat:no-repeat;
+
   z-index:-2;
 }
 
-body::after{
-  content:"";
+/* overlay oscuro */
+.overlay{
   position:fixed;
   inset:0;
   background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.9));
@@ -68,22 +88,10 @@ nav a:hover{
   color:#25D366;
 }
 
-/* 🔥 HEADER IGUAL A SERVICIOS */
+/* HEADER (MISMO TAMAÑO QUE SERVICIOS) */
 .header{
-  padding:80px 20px 30px;
   text-align:center;
-}
-
-/* 👇 ESTA ES LA CLAVE QUE TE FALTABA */
-.header-card{
-  display:inline-block;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  padding:30px 32px;
-  border-radius:16px;
-  max-width:750px;
-  backdrop-filter:blur(12px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  padding:80px 20px 30px;
 }
 
 .header h1{
@@ -152,6 +160,8 @@ nav a:hover{
 
 <body>
 
+<div class="overlay"></div>
+
 <nav>
   <a href="index.html">Inicio</a>
   <a href="informacion.html">Información</a>
@@ -161,10 +171,8 @@ nav a:hover{
 </nav>
 
 <div class="header">
-  <div class="header-card">
-    <h1>Catálogo</h1>
-    <p>Galería de equipos y maniobras</p>
-  </div>
+  <h1>Catálogo</h1>
+  <p>Galería de equipos y maniobras</p>
 </div>
 
 <section class="grid">
