@@ -21,8 +21,7 @@ body{
 
 /* NAV */
 nav{
-  background:rgba(0,0,0,0.75);
-  backdrop-filter:blur(12px);
+  background:rgba(0,0,0,0.85);
   padding:14px 20px;
   position:sticky;
   top:0;
@@ -39,16 +38,9 @@ nav a{
   text-decoration:none;
   font-size:15px;
   font-weight:600;
-  opacity:0.85;
-  transition:0.3s;
 }
 
-nav a:hover{
-  opacity:1;
-  color:#25D366;
-}
-
-/* HERO (FONDO RESTAURADO TAL CUAL BASE ORIGINAL) */
+/* 🔥 HERO LIMPIO Y SIN DISTORSIÓN */
 .hero{
   min-height:100vh;
   display:flex;
@@ -56,23 +48,38 @@ nav a:hover{
   align-items:center;
   text-align:center;
   position:relative;
+
   overflow:hidden;
+
+  /* 🔥 IMPORTANTE: imagen aislada en capa separada */
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
 
   background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg');
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
+
+  /* 🔥 FIX CLAVE: evita “blur visual” en render */
+  transform:scale(1.02);
+  filter:contrast(1.05) saturate(1.05);
+
+  z-index:-2;
 }
 
-/* OVERLAY SUAVE COMO TU VERSIÓN ORIGINAL BUENA */
-.hero::before{
+/* overlay separado (controlado) */
+.hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.70);
+  background:rgba(0,0,0,0.65);
+  z-index:-1;
 }
 
-/* CONTENIDO */
 .hero-content{
   position:relative;
   z-index:2;
@@ -110,31 +117,24 @@ nav a:hover{
 .main-text{
   font-size:72px;
   font-weight:950;
-  letter-spacing:1px;
   line-height:1.05;
 }
 
 .sub{
   font-size:18px;
   opacity:0.9;
-  color:#cbd5e1;
 }
 
 /* BOTONES */
 .buttons{
   display:flex;
   gap:12px;
-  flex-wrap:wrap;
-  justify-content:center;
 }
 
 .btn{
   padding:15px 22px;
-  border-radius:8px;
-  text-decoration:none;
   font-weight:800;
-  font-size:15px;
-  transition:0.3s;
+  text-decoration:none;
 }
 
 .btn.primary{
@@ -142,19 +142,9 @@ nav a:hover{
   color:white;
 }
 
-.btn.primary:hover{
-  background:#1ebe5d;
-  transform:translateY(-2px);
-}
-
 .btn.secondary{
   border:2px solid white;
   color:white;
-}
-
-.btn.secondary:hover{
-  background:white;
-  color:black;
 }
 
 /* WHATSAPP */
@@ -162,34 +152,14 @@ nav a:hover{
   position:fixed;
   bottom:20px;
   right:20px;
-  background:#25D366;
-  color:white;
   width:62px;
   height:62px;
+  background:#25D366;
   border-radius:50%;
   display:flex;
   justify-content:center;
   align-items:center;
   font-size:28px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.4);
-  z-index:2000;
-  text-decoration:none;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-
-  .main-text{
-    font-size:38px;
-  }
-
-  .hero-logo img{
-    height:180px;
-  }
-
-  .sub{
-    font-size:15px;
-  }
 }
 
 </style>
@@ -231,9 +201,7 @@ nav a:hover{
 
 </section>
 
-<a class="whatsapp" href="https://wa.me/5217771330689">
-  💬
-</a>
+<a class="whatsapp" href="https://wa.me/5217771330689">💬</a>
 
 </body>
 </html>
