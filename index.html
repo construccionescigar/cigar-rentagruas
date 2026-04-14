@@ -60,20 +60,22 @@ nav a:hover{
 
   background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg');
   background-size:cover;
-  background-position:center;
+
+  /* 🔥 ARREGLO DEL FONDO */
+  background-position:center 35%;
+  background-repeat:no-repeat;
 }
 
-/* 🔥 FONDO MÁS PROFESIONAL (NO BORROSO, SOLO CONTROL DE CONTRASTE) */
+/* 🔥 OVERLAY CORREGIDO (MEJOR CONTRASTE SIN BORROSIDAD) */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,0.55),
-      rgba(0,0,0,0.80)
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.80)
+  );
 }
 
 /* CENTRADO REAL PERFECTO */
@@ -103,7 +105,7 @@ nav a:hover{
   color:#25D366;
 }
 
-/* LOGO GRANDE (SIN CAMBIAR TU CONCEPTO) */
+/* LOGO */
 .hero-logo img{
   height:300px;
   max-width:95%;
