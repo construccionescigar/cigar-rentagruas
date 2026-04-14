@@ -48,6 +48,32 @@ nav a:hover{
   color:#25D366;
 }
 
+/* 🔥 SLOGANS ESQUINAS SUPERIORES */
+.slogan{
+  position:fixed;
+  top:90px;
+  font-size:13px;
+  font-weight:600;
+  color:#9ca3af;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  opacity:0;
+  transition:opacity 0.6s ease;
+  z-index:999;
+  max-width:220px;
+  pointer-events:none;
+}
+
+.slogan.left{
+  left:20px;
+  text-align:left;
+}
+
+.slogan.right{
+  right:20px;
+  text-align:right;
+}
+
 /* HERO */
 .hero{
   min-height:100vh;
@@ -62,27 +88,20 @@ nav a:hover{
   background-color:#000;
 }
 
-/* 🔥 FONDO PRO CORREGIDO */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
 
   background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/Gemini_Generated_Image_f8pghjf8pghjf8pg_typgu0.png');
-
   background-size:cover;
-
-  /* 🔥 ESTE ES EL PUNTO CLAVE */
   background-position:50% 20%;
-
   background-repeat:no-repeat;
 
   transform:scale(1.08);
-
   filter:contrast(1.1) saturate(1.05) brightness(0.85);
 }
 
-/* OVERLAY SUAVE (NO MATA LA IMAGEN) */
 .hero::after{
   content:"";
   position:absolute;
@@ -95,11 +114,9 @@ nav a:hover{
   );
 }
 
-/* CONTENIDO */
 .hero-content{
   position:relative;
   z-index:2;
-
   width:100%;
   max-width:1000px;
   padding:40px 20px;
@@ -111,7 +128,6 @@ nav a:hover{
   gap:18px;
 }
 
-/* BADGE */
 .badge{
   background:rgba(37, 211, 102, 0.14);
   border:1px solid rgba(37,211,102,0.45);
@@ -122,14 +138,12 @@ nav a:hover{
   color:#25D366;
 }
 
-/* LOGO */
 .hero-logo img{
   height:300px;
   max-width:95%;
   filter:drop-shadow(0 15px 35px rgba(0,0,0,0.7));
 }
 
-/* TEXTO */
 .main-text{
   font-size:72px;
   font-weight:950;
@@ -143,7 +157,6 @@ nav a:hover{
   color:#cbd5e1;
 }
 
-/* BOTONES */
 .buttons{
   display:flex;
   gap:12px;
@@ -212,6 +225,10 @@ nav a:hover{
   .sub{
     font-size:15px;
   }
+
+  .slogan{
+    display:none;
+  }
 }
 
 </style>
@@ -226,6 +243,10 @@ nav a:hover{
   <a href="catalogo.html">Catálogo</a>
   <a href="contacto.html">Contacto</a>
 </nav>
+
+<!-- 🔥 SLOGANS -->
+<div class="slogan left" id="slogan-left"></div>
+<div class="slogan right" id="slogan-right"></div>
 
 <section class="hero">
 
@@ -257,6 +278,56 @@ nav a:hover{
 <a class="whatsapp" href="https://wa.me/5217771330689">
   💬
 </a>
+
+<!-- 🔥 SCRIPT SLOGANS -->
+<script>
+
+const slogans = [
+  "Elevamos proyectos, no solo cargas",
+  "Donde otros se detienen, nosotros levantamos",
+  "Precisión y potencia en cada maniobra",
+  "Tu proyecto en manos expertas",
+  "Soluciones de izaje para grandes desafíos",
+  "Ingeniería y fuerza trabajando para ti",
+  "Especialistas en carga pesada y maniobras críticas",
+  "Tecnología y experiencia en cada elevación",
+  "Movemos lo que necesitas, cuando lo necesitas",
+  "Seguridad, rapidez y eficiencia en cada servicio",
+  "Tu aliado estratégico en proyectos industriales",
+  "Resultados que se elevan contigo"
+];
+
+let index = 0;
+
+const left = document.getElementById("slogan-left");
+const right = document.getElementById("slogan-right");
+
+function cambiar(){
+
+  left.style.opacity = 0;
+  right.style.opacity = 0;
+
+  setTimeout(() => {
+    index = (index + 1) % slogans.length;
+
+    left.textContent = slogans[index];
+    right.textContent = slogans[(index + 3) % slogans.length];
+
+    left.style.opacity = 1;
+    right.style.opacity = 1;
+
+  }, 400);
+}
+
+left.textContent = slogans[0];
+right.textContent = slogans[3];
+
+left.style.opacity = 1;
+right.style.opacity = 1;
+
+setInterval(cambiar, 7000);
+
+</script>
 
 </body>
 </html>
