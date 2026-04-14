@@ -14,13 +14,45 @@
   font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
+/* 🔥 BASE */
 body{
-  background:
-    radial-gradient(circle at top, rgba(37,211,102,0.08), transparent 40%),
-    radial-gradient(circle at bottom, rgba(255,255,255,0.03), transparent 50%),
-    #0b0f14;
-
+  min-height:100vh;
   color:white;
+  position:relative;
+  overflow-x:hidden;
+}
+
+/* 🔥 FONDO NUEVO (SERVICIOS) */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background-image:url("https://res.cloudinary.com/deod0oalc/image/upload/width_1280_nychyg.jpg");
+
+  background-size:cover;
+
+  /* 🎯 encuadre equilibrado */
+  background-position:50% 30%;
+
+  background-repeat:no-repeat;
+
+  z-index:-2;
+}
+
+/* 🔥 OVERLAY PRO */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,0.40),
+    rgba(0,0,0,0.88)
+  );
+
+  z-index:-1;
 }
 
 /* NAV */
@@ -113,7 +145,6 @@ nav a:hover{
   overflow:hidden;
 }
 
-/* glow suave */
 .card::before{
   content:"";
   position:absolute;
@@ -181,6 +212,11 @@ nav a:hover{
 
   .section h2{
     font-size:24px;
+  }
+
+  /* 📱 ajuste fino móvil */
+  body::before{
+    background-position:50% 18%;
   }
 }
 
