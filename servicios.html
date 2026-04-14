@@ -1,4 +1,282 @@
-<!-- SOLO TE PEGO LA PARTE MODIFICADA PARA QUE NO BATALLes -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grúas | Servicios</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* 🔥 BASE */
+body{
+  min-height:100vh;
+  color:white;
+  position:relative;
+  overflow-x:hidden;
+  background:#0b0f14;
+}
+
+/* 🔥 FONDO */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background-image:url("https://res.cloudinary.com/deod0oalc/image/upload/width_1200_nfpbpj.png");
+  background-size:cover;
+  background-position:50% 45%;
+  background-repeat:no-repeat;
+
+  transform:scale(1.03);
+  filter:brightness(0.85) contrast(1.05);
+
+  z-index:-2;
+}
+
+/* OVERLAY */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.80)
+  );
+
+  z-index:-1;
+}
+
+/* 🔥 SLOGANS */
+.slogan{
+  position:fixed;
+  top:90px;
+  width:260px;
+  font-size:14px;
+  font-weight:700;
+  color:#25D366;
+  opacity:0.9;
+  z-index:999;
+  line-height:1.4;
+}
+
+.slogan.left{
+  left:20px;
+  text-align:left;
+}
+
+.slogan.right{
+  right:20px;
+  text-align:right;
+}
+
+/* NAV */
+nav{
+  background:rgba(0,0,0,0.75);
+  backdrop-filter:blur(12px);
+  padding:14px 20px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:600;
+  opacity:0.85;
+  transition:0.3s;
+}
+
+nav a:hover{
+  opacity:1;
+  color:#25D366;
+}
+
+/* HEADER */
+.header{
+  padding:80px 20px 30px;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.header-card{
+  display:inline-block;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:30px 32px;
+  border-radius:16px;
+  max-width:750px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.header h1{
+  font-size:42px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.header p{
+  opacity:0.85;
+  font-size:16px;
+  color:#cbd5e1;
+}
+
+/* SECTION */
+.section{
+  padding:20px 20px 80px;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.section h2{
+  font-size:32px;
+  margin-bottom:35px;
+  font-weight:800;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:22px;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:24px;
+  border-radius:16px;
+  text-align:left;
+  transition:0.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top left, rgba(37,211,102,0.08), transparent 60%);
+  opacity:0;
+  transition:0.3s;
+}
+
+.card:hover::before{
+  opacity:1;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(37,211,102,0.35);
+}
+
+.card h3{
+  font-size:18px;
+  margin-bottom:10px;
+  color:#25D366;
+  font-weight:800;
+}
+
+.card p{
+  font-size:14px;
+  color:#cbd5e1;
+  line-height:1.6;
+}
+
+/* CTA */
+.cta{
+  margin-top:50px;
+}
+
+.btn{
+  display:inline-block;
+  padding:15px 24px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:800;
+  font-size:15px;
+  transition:0.3s;
+  background:#25D366;
+  color:white;
+  box-shadow:0 10px 25px rgba(37,211,102,0.25);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  background:#1ebe5d;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .slogan{
+    display:none;
+  }
+
+  nav{
+    gap:10px;
+  }
+
+  .header h1{
+    font-size:28px;
+  }
+
+  .section h2{
+    font-size:24px;
+  }
+
+  body::before{
+    background-position:50% 35%;
+    transform:scale(1.02);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="slogan left" id="sloganLeft"></div>
+<div class="slogan right" id="sloganRight"></div>
+
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="informacion.html">Información</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="catalogo.html">Catálogo</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<div class="header">
+  <div class="header-card">
+    <h1>Servicios</h1>
+    <p>Soluciones profesionales en izaje, maniobras y transporte de carga pesada</p>
+  </div>
+</div>
+
+<section class="section">
+
+  <h2>Nuestros Servicios</h2>
 
   <div class="cards">
 
@@ -22,19 +300,50 @@
       <p>Operadores certificados y equipo especializado para proyectos industriales complejos.</p>
     </div>
 
-  </div>
-
-  <!-- 🔥 NUEVA CARD EXTRA -->
-  <div style="max-width:700px; margin:30px auto 0;">
-    <div class="card" style="text-align:center;">
-      <h3>¿No cuenta con personal especializado?</h3>
+    <!-- 🔥 NUEVA CARD -->
+    <div class="card" style="grid-column: span 2; text-align:center;">
+      <h3>👷 Nosotros ponemos el personal especializado</h3>
       <p>
         Si no cuenta con personal especializado para realizar sus maniobras o montajes,
         nosotros se los podemos proporcionar.
       </p>
     </div>
+
   </div>
 
   <div class="cta">
     <a class="btn" href="contacto.html">Cotizar ahora</a>
   </div>
+
+</section>
+
+<script>
+const slogans = [
+"Precisión en cada maniobra",
+"Elevamos proyectos, no solo cargas",
+"Ingeniería y potencia en cada izaje",
+"Soluciones seguras para cargas críticas",
+"Tu proyecto en manos expertas",
+"Maniobras complejas, resultados simples",
+"Capacidad que supera expectativas",
+"Donde otros no llegan, nosotros sí",
+"Tecnología, fuerza y experiencia",
+"Operación segura, resultado garantizado",
+"Especialistas en carga pesada",
+"Movemos lo imposible"
+];
+
+let i = 0;
+
+function cambiarSlogan(){
+  document.getElementById("sloganLeft").textContent = slogans[i];
+  document.getElementById("sloganRight").textContent = slogans[(i+1) % slogans.length];
+  i = (i + 1) % slogans.length;
+}
+
+cambiarSlogan();
+setInterval(cambiarSlogan, 7000);
+</script>
+
+</body>
+</html>
