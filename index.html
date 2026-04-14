@@ -58,31 +58,24 @@ nav a:hover{
   position:relative;
   overflow:hidden;
 
-  /* 🔥 CONTROL REAL DEL FONDO */
+  /* 🔥 FONDO ARREGLADO */
   background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg');
   background-size:cover;
-
-  /* 🔥 ESTE ES EL CAMBIO IMPORTANTE */
-  background-position:50% 25%;
-
   background-repeat:no-repeat;
-
-  /* 🔥 mejora percepción de nitidez */
-  filter: contrast(1.1) saturate(1.05);
+  background-position:center 30%;
+  background-attachment:fixed;
 }
 
-/* 🔥 OVERLAY CON PROFUNDIDAD REAL (NO PLANO) */
+/* 🔥 OVERLAY MÁS LIMPIO (QUITAMOS EFECTO “GRIS SUCIO”) */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-
   background:
-    radial-gradient(circle at 50% 35%, rgba(0,0,0,0.15), rgba(0,0,0,0.75)),
-    linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.85));
+    radial-gradient(circle at center, rgba(0,0,0,0.25), rgba(0,0,0,0.85));
 }
 
-/* CONTENIDO */
+/* CENTRADO */
 .hero-content{
   position:relative;
   z-index:2;
@@ -136,6 +129,7 @@ nav a:hover{
   gap:12px;
   flex-wrap:wrap;
   justify-content:center;
+  margin-top:5px;
 }
 
 .btn{
@@ -201,6 +195,11 @@ nav a:hover{
     font-size:15px;
   }
 
+  /* 🔥 FIX MÓVIL (IMPORTANTE) */
+  .hero{
+    background-attachment:scroll;
+    background-position:center;
+  }
 }
 
 </style>
