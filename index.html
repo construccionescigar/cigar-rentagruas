@@ -52,11 +52,14 @@ nav a:hover{
 .hero{
   min-height:100vh;
   display:flex;
-  justify-content:center;
+  justify-content:flex-start; /* 🔥 YA NO CENTRADO */
   align-items:center;
   text-align:center;
   position:relative;
   overflow:hidden;
+
+  padding-top:80px; /* 🔥 SUBE TODO */
+  padding-bottom:40px;
 
   background-image:
     url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg');
@@ -64,15 +67,18 @@ nav a:hover{
   background-position:center;
 }
 
+/* 🔥 FONDO MEJORADO (MENOS BORROSO / MÁS CONTRASTE REAL) */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    180deg,
-    rgba(0,0,0,0.80),
-    rgba(0,0,0,0.90)
-  );
+  background:
+    radial-gradient(circle at 50% 30%, rgba(0,0,0,0.35), transparent 60%),
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.85)
+    );
 }
 
 .hero-content{
@@ -83,40 +89,41 @@ nav a:hover{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:20px;
+  gap:16px;
+  margin-top:-40px; /* 🔥 SUBE MÁS EL BLOQUE */
 }
 
-/* 🔥 TEXTO PRINCIPAL (MÁS GRANDE COMO PEDISTE) */
+/* 🔥 BADGE MÁS ARRIBA Y MÁS LIMPIO */
+.badge{
+  background:rgba(37, 211, 102, 0.14);
+  border:1px solid rgba(37,211,102,0.45);
+  padding:10px 18px;
+  border-radius:50px;
+  font-weight:800;
+  font-size:14px;
+  color:#25D366;
+}
+
+/* 🔥 LOGO MÁS GRANDE */
+.hero-logo img{
+  height:300px;
+  max-width:95%;
+  filter:drop-shadow(0 15px 35px rgba(0,0,0,0.7));
+}
+
+/* 🔥 TEXTO PRINCIPAL MÁS GRANDE (LO QUE PEDISTE) */
 .main-text{
-  font-size:54px;
-  font-weight:900;
+  font-size:72px; /* 🔥 MÁS GRANDE */
+  font-weight:950;
   letter-spacing:1px;
-  line-height:1.1;
+  line-height:1.05;
 }
 
 /* SUBTEXTO */
 .sub{
   font-size:18px;
-  opacity:0.85;
+  opacity:0.9;
   color:#cbd5e1;
-}
-
-/* BADGE */
-.badge{
-  background:rgba(37, 211, 102, 0.12);
-  border:1px solid rgba(37,211,102,0.4);
-  padding:10px 16px;
-  border-radius:50px;
-  font-weight:700;
-  font-size:14px;
-  color:#25D366;
-}
-
-/* 🔥 LOGO MÁS GRANDE (COMO PEDISTE) */
-.hero-logo img{
-  height:260px;
-  max-width:95%;
-  filter:drop-shadow(0 15px 30px rgba(0,0,0,0.7));
 }
 
 /* BOTONES */
@@ -125,6 +132,7 @@ nav a:hover{
   gap:12px;
   flex-wrap:wrap;
   justify-content:center;
+  margin-top:5px;
 }
 
 .btn{
@@ -179,11 +187,11 @@ nav a:hover{
 @media(max-width:768px){
 
   .main-text{
-    font-size:32px;
+    font-size:38px;
   }
 
   .hero-logo img{
-    height:170px;
+    height:180px;
   }
 
   .sub{
