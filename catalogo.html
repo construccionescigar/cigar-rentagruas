@@ -43,6 +43,29 @@ body::after{
   z-index:-1;
 }
 
+/* 🔥 SLOGANS */
+.slogan{
+  position:fixed;
+  top:90px;
+  width:260px;
+  font-size:14px;
+  font-weight:700;
+  color:#25D366;
+  opacity:0.9;
+  z-index:999;
+  line-height:1.4;
+}
+
+.slogan.left{
+  left:20px;
+  text-align:left;
+}
+
+.slogan.right{
+  right:20px;
+  text-align:right;
+}
+
 /* NAV */
 nav{
   background:rgba(0,0,0,0.75);
@@ -68,7 +91,7 @@ nav a:hover{
   color:#25D366;
 }
 
-/* 🔥 HEADER (MISMO QUE SERVICIOS) */
+/* 🔥 HEADER */
 .header{
   padding:80px 20px 30px;
   text-align:center;
@@ -76,7 +99,6 @@ nav a:hover{
   z-index:2;
 }
 
-/* 🔥 ESTA ERA LA CLAVE */
 .header-card{
   display:inline-block;
   background:rgba(255,255,255,0.04);
@@ -111,7 +133,7 @@ nav a:hover{
   gap:18px;
 }
 
-/* TARJETAS SOLO IMAGEN */
+/* TARJETAS */
 .item{
   border-radius:14px;
   overflow:hidden;
@@ -139,6 +161,12 @@ nav a:hover{
   }
 }
 
+@media(max-width:768px){
+  .slogan{
+    display:none; /* 🔥 ocultar en celular */
+  }
+}
+
 @media(max-width:500px){
   .grid{
     grid-template-columns:1fr;
@@ -154,6 +182,10 @@ nav a:hover{
 
 <body>
 
+<!-- 🔥 SLOGANS -->
+<div class="slogan left" id="sloganLeft"></div>
+<div class="slogan right" id="sloganRight"></div>
+
 <nav>
   <a href="index.html">Inicio</a>
   <a href="informacion.html">Información</a>
@@ -162,7 +194,6 @@ nav a:hover{
   <a href="contacto.html">Contacto</a>
 </nav>
 
-<!-- 🔥 HEADER CORREGIDO -->
 <div class="header">
   <div class="header-card">
     <h1>Catálogo</h1>
@@ -191,6 +222,34 @@ nav a:hover{
   <div class="item"><img src="https://res.cloudinary.com/deod0oalc/image/upload/56b174f9-fffc-4923-9de6-758770da4054_fg3lgu.jpg"></div>
 
 </section>
+
+<script>
+const slogans = [
+"Equipos listos para cualquier desafío",
+"Potencia y precisión en cada proyecto",
+"Flota moderna para trabajos exigentes",
+"Capacidad que marca la diferencia",
+"Tecnología aplicada al izaje",
+"Cada imagen respalda nuestra experiencia",
+"Soluciones reales en cada proyecto",
+"Confianza que se construye con resultados",
+"Movemos grandes proyectos",
+"Donde la maquinaria cobra vida",
+"Tu proyecto empieza aquí",
+"Calidad en cada maniobra"
+];
+
+let i = 0;
+
+function cambiarSlogan(){
+  document.getElementById("sloganLeft").textContent = slogans[i];
+  document.getElementById("sloganRight").textContent = slogans[(i+1) % slogans.length];
+  i = (i + 1) % slogans.length;
+}
+
+cambiarSlogan();
+setInterval(cambiarSlogan, 7000);
+</script>
 
 </body>
 </html>
