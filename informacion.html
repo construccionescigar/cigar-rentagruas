@@ -14,7 +14,7 @@
   font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* 🔥 BASE */
+/* BASE */
 body{
   min-height:100vh;
   color:white;
@@ -22,7 +22,7 @@ body{
   overflow-x:hidden;
 }
 
-/* 🔥 FONDO IGUAL AL INDEX (SISTEMA HERO) */
+/* 🔥 FONDO PRO (CONTROL REAL DE ENCUADRE) */
 body::before{
   content:"";
   position:fixed;
@@ -32,19 +32,15 @@ body::before{
 
   background-size:cover;
 
-  /* 🎯 ENCUDRE EXACTO (igual lógica que index) */
+  /* 🎯 ENCUADRE PC (se ve más general y equilibrado) */
   background-position:50% 25%;
 
   background-repeat:no-repeat;
 
-  transform:scale(1.06);
-
-  filter:contrast(1.05) saturate(1.05) brightness(0.80);
-
   z-index:-2;
 }
 
-/* 🔥 OVERLAY IGUAL CALIDAD HERO */
+/* 🔥 OVERLAY PRO */
 body::after{
   content:"";
   position:fixed;
@@ -193,7 +189,7 @@ nav a:hover{
   line-height:1.6;
 }
 
-/* RESPONSIVE */
+/* 📱 MOBILE (ESTO ES LO QUE TE FALTABA REALMENTE) */
 @media(max-width:768px){
 
   nav{
@@ -212,10 +208,9 @@ nav a:hover{
     font-size:15px;
   }
 
-  /* 📱 ajuste igual al hero mobile */
+  /* 🎯 ENCUADRE MOBILE (más alto para que no se pierda la grúa) */
   body::before{
-    background-position:50% 18%;
-    transform:scale(1.10);
+    background-position:50% 15%;
   }
 }
 
