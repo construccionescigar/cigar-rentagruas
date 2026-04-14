@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Grúas y Maniobras Nacionales</title>
+<title>Grúas y Maniobras Nacionales CR</title>
 
 <style>
 
@@ -59,25 +59,20 @@ nav a:hover{
   overflow:hidden;
 
   background-image:
-    linear-gradient(
-      135deg,
-      rgba(0,0,0,0.55),
-      rgba(0,0,0,0.85)
-    ),
     url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg');
-
   background-size:cover;
   background-position:center;
 }
 
-/* EFECTO DE PROFUNDIDAD */
-.hero::after{
+.hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:
-    radial-gradient(circle at center, rgba(37,211,102,0.10), transparent 60%);
-  z-index:1;
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,0.80),
+    rgba(0,0,0,0.90)
+  );
 }
 
 .hero-content{
@@ -88,75 +83,71 @@ nav a:hover{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:18px;
+  gap:20px;
 }
 
-/* BADGE MÁS VIVO */
+/* 🔥 TEXTO PRINCIPAL (MÁS GRANDE COMO PEDISTE) */
+.main-text{
+  font-size:54px;
+  font-weight:900;
+  letter-spacing:1px;
+  line-height:1.1;
+}
+
+/* SUBTEXTO */
+.sub{
+  font-size:18px;
+  opacity:0.85;
+  color:#cbd5e1;
+}
+
+/* BADGE */
 .badge{
-  background:rgba(37, 211, 102, 0.18);
-  border:1px solid rgba(37,211,102,0.45);
+  background:rgba(37, 211, 102, 0.12);
+  border:1px solid rgba(37,211,102,0.4);
   padding:10px 16px;
   border-radius:50px;
   font-weight:700;
   font-size:14px;
   color:#25D366;
-  box-shadow:0 0 20px rgba(37,211,102,0.15);
 }
 
-/* LOGO */
+/* 🔥 LOGO MÁS GRANDE (COMO PEDISTE) */
 .hero-logo img{
-  height:180px;
-  max-width:90%;
+  height:260px;
+  max-width:95%;
   filter:drop-shadow(0 15px 30px rgba(0,0,0,0.7));
 }
 
-/* TITULO MÁS FUERTE */
-h1{
-  font-size:44px;
-  font-weight:900;
-  letter-spacing:1px;
-}
-
-.sub{
-  font-size:18px;
-  opacity:0.9;
-  color:#cbd5e1;
-  max-width:600px;
-}
-
-/* BOTONES MÁS “VENTA” */
+/* BOTONES */
 .buttons{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
   justify-content:center;
-  margin-top:10px;
 }
 
 .btn{
-  padding:14px 22px;
-  border-radius:10px;
+  padding:15px 22px;
+  border-radius:8px;
   text-decoration:none;
   font-weight:800;
   font-size:15px;
   transition:0.3s;
 }
 
-/* PRIMARY MÁS BRILLANTE */
 .btn.primary{
   background:#25D366;
   color:white;
-  box-shadow:0 10px 25px rgba(37,211,102,0.25);
 }
 
 .btn.primary:hover{
-  transform:translateY(-2px);
   background:#1ebe5d;
+  transform:translateY(-2px);
 }
 
-/* SECONDARY MÁS LIMPIO */
 .btn.secondary{
-  border:2px solid rgba(255,255,255,0.8);
+  border:2px solid white;
   color:white;
 }
 
@@ -165,7 +156,7 @@ h1{
   color:black;
 }
 
-/* WHATSAPP FLOAT MÁS VISIBLE */
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:20px;
@@ -179,7 +170,7 @@ h1{
   justify-content:center;
   align-items:center;
   font-size:28px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.5);
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
   z-index:2000;
   text-decoration:none;
 }
@@ -187,21 +178,18 @@ h1{
 /* RESPONSIVE */
 @media(max-width:768px){
 
-  h1{
-    font-size:30px;
+  .main-text{
+    font-size:32px;
+  }
+
+  .hero-logo img{
+    height:170px;
   }
 
   .sub{
     font-size:15px;
   }
 
-  .hero-logo img{
-    height:140px;
-  }
-
-  nav{
-    gap:10px;
-  }
 }
 
 </style>
@@ -220,20 +208,22 @@ h1{
 
   <div class="hero-content">
 
-    <div class="badge">🚧 Renta de Grúas Industriales</div>
+    <div class="badge">Renta de Grúas Industriales</div>
 
     <div class="hero-logo">
       <img src="https://res.cloudinary.com/deod0oalc/image/upload/LogoGruaPNG_xpqskn.png">
     </div>
 
-    <h1>Grúas y Maniobras Nacionales</h1>
+    <div class="main-text">
+      Grúas y Maniobras<br>Nacionales CR
+    </div>
 
     <div class="sub">
       Soluciones profesionales en izaje, maniobras y transporte especializado
     </div>
 
     <div class="buttons">
-      <a class="btn primary" href="contacto.html">Cotizar por WhatsApp</a>
+      <a class="btn primary" href="contacto.html">Cotizar ahora</a>
       <a class="btn secondary" href="servicios.html">Ver servicios</a>
     </div>
 
@@ -241,7 +231,7 @@ h1{
 
 </section>
 
-<a class="whatsapp" href="https://wa.me/5217771330689" target="_blank">
+<a class="whatsapp" href="https://wa.me/5217771330689">
   💬
 </a>
 
