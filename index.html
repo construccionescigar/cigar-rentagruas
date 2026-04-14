@@ -52,48 +52,47 @@ nav a:hover{
 .hero{
   min-height:100vh;
   display:flex;
-  justify-content:flex-start; /* 🔥 YA NO CENTRADO */
+  justify-content:center;
   align-items:center;
   text-align:center;
   position:relative;
   overflow:hidden;
 
-  padding-top:80px; /* 🔥 SUBE TODO */
-  padding-bottom:40px;
-
-  background-image:
-    url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg');
+  background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg');
   background-size:cover;
   background-position:center;
 }
 
-/* 🔥 FONDO MEJORADO (MENOS BORROSO / MÁS CONTRASTE REAL) */
+/* 🔥 FONDO MÁS PROFESIONAL (NO BORROSO, SOLO CONTROL DE CONTRASTE) */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 50% 30%, rgba(0,0,0,0.35), transparent 60%),
     linear-gradient(
       180deg,
-      rgba(0,0,0,0.65),
-      rgba(0,0,0,0.85)
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.80)
     );
 }
 
+/* CENTRADO REAL PERFECTO */
 .hero-content{
   position:relative;
   z-index:2;
-  max-width:900px;
-  padding:20px;
+
+  width:100%;
+  max-width:1000px;
+  padding:40px 20px;
+
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:16px;
-  margin-top:-40px; /* 🔥 SUBE MÁS EL BLOQUE */
+  justify-content:center;
+  gap:18px;
 }
 
-/* 🔥 BADGE MÁS ARRIBA Y MÁS LIMPIO */
+/* BADGE */
 .badge{
   background:rgba(37, 211, 102, 0.14);
   border:1px solid rgba(37,211,102,0.45);
@@ -104,16 +103,16 @@ nav a:hover{
   color:#25D366;
 }
 
-/* 🔥 LOGO MÁS GRANDE */
+/* LOGO GRANDE (SIN CAMBIAR TU CONCEPTO) */
 .hero-logo img{
   height:300px;
   max-width:95%;
   filter:drop-shadow(0 15px 35px rgba(0,0,0,0.7));
 }
 
-/* 🔥 TEXTO PRINCIPAL MÁS GRANDE (LO QUE PEDISTE) */
+/* TEXTO PRINCIPAL */
 .main-text{
-  font-size:72px; /* 🔥 MÁS GRANDE */
+  font-size:72px;
   font-weight:950;
   letter-spacing:1px;
   line-height:1.05;
