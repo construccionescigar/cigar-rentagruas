@@ -23,25 +23,47 @@ body{
   background:#0b0f14;
 }
 
-/* 🔥 MISMO SISTEMA QUE INDEX (ESTO ES LA CORRECCIÓN REAL) */
+/* =========================
+   🔥 FONDO PRO (SIN RECORTE)
+   ========================= */
+
+/* Capa de fondo extendida (blur elegante) */
 body::before{
   content:"";
   position:fixed;
   inset:0;
 
+  /* imagen principal */
   background-image:url("https://res.cloudinary.com/deod0oalc/image/upload/width_1200_nfpbpj.png");
 
-  background-size:cover;
-  background-position:center 25%;
   background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
 
-  transform:scale(1.05);
-  filter:brightness(0.85) contrast(1.1);
+  /* centra la imagen */
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
   z-index:-2;
 }
 
-/* OVERLAY */
+/* 🔥 EXTENSIÓN PARA EVITAR ESPACIOS VACÍOS (PRO LOOK) */
+body::before::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background-image:url("https://res.cloudinary.com/deod0oalc/image/upload/width_1200_nfpbpj.png");
+  background-size:cover;
+  background-position:center;
+  filter:blur(35px) brightness(0.4);
+  transform:scale(1.2);
+
+  z-index:-1;
+}
+
+/* OVERLAY PRINCIPAL */
 body::after{
   content:"";
   position:fixed;
@@ -49,11 +71,11 @@ body::after{
 
   background:linear-gradient(
     180deg,
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.80)
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.88)
   );
 
-  z-index:-1;
+  z-index:0;
 }
 
 /* NAV */
@@ -89,6 +111,8 @@ nav a:hover{
 .header{
   padding:80px 20px 30px;
   text-align:center;
+  position:relative;
+  z-index:2;
 }
 
 .header-card{
@@ -118,6 +142,8 @@ nav a:hover{
 .section{
   padding:20px 20px 80px;
   text-align:center;
+  position:relative;
+  z-index:2;
 }
 
 .section h2{
@@ -213,10 +239,6 @@ nav a:hover{
 
   .section h2{
     font-size:24px;
-  }
-
-  body::before{
-    background-position:center 18%;
   }
 }
 
