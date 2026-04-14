@@ -14,7 +14,7 @@
   font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* 🔥 BASE */
+/* 🔥 FONDO */
 body{
   min-height:100vh;
   position:relative;
@@ -22,11 +22,7 @@ body{
   overflow-x:hidden;
 }
 
-/* =========================
-   🔥 FONDO PRO (IMAGEN COMPLETA)
-   ========================= */
-
-/* capa BORROSA (relleno elegante) */
+/* fondo elegante */
 body::before{
   content:"";
   position:fixed;
@@ -35,31 +31,15 @@ body::before{
   background-image:url("https://res.cloudinary.com/deod0oalc/image/upload/5d02ef40-1642-4a3f-b3ea-05ee9ca98ddc_age4vr.jpg");
   background-size:cover;
   background-position:center;
-  filter:blur(40px) brightness(0.4);
-  transform:scale(1.2);
-
-  z-index:-3;
+  filter:brightness(0.35);
+  z-index:-2;
 }
 
-/* imagen PRINCIPAL completa */
 body::after{
   content:"";
   position:fixed;
   inset:0;
-
-  background-image:url("https://res.cloudinary.com/deod0oalc/image/upload/5d02ef40-1642-4a3f-b3ea-05ee9ca98ddc_age4vr.jpg");
-  background-size:contain; /* 👈 CLAVE (NO RECORTE) */
-  background-position:center;
-  background-repeat:no-repeat;
-
-  z-index:-2;
-}
-
-/* overlay oscuro */
-.overlay{
-  position:fixed;
-  inset:0;
-  background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.9));
+  background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.85));
   z-index:-1;
 }
 
@@ -88,10 +68,24 @@ nav a:hover{
   color:#25D366;
 }
 
-/* HEADER (MISMO TAMAÑO QUE SERVICIOS) */
+/* 🔥 HEADER (MISMO QUE SERVICIOS) */
 .header{
-  text-align:center;
   padding:80px 20px 30px;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+/* 🔥 ESTA ERA LA CLAVE */
+.header-card{
+  display:inline-block;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:30px 32px;
+  border-radius:16px;
+  max-width:750px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
 .header h1{
@@ -101,9 +95,9 @@ nav a:hover{
 }
 
 .header p{
-  color:#cbd5e1;
-  font-size:16px;
   opacity:0.85;
+  font-size:16px;
+  color:#cbd5e1;
 }
 
 /* GRID */
@@ -117,7 +111,7 @@ nav a:hover{
   gap:18px;
 }
 
-/* TARJETAS */
+/* TARJETAS SOLO IMAGEN */
 .item{
   border-radius:14px;
   overflow:hidden;
@@ -160,8 +154,6 @@ nav a:hover{
 
 <body>
 
-<div class="overlay"></div>
-
 <nav>
   <a href="index.html">Inicio</a>
   <a href="informacion.html">Información</a>
@@ -170,9 +162,12 @@ nav a:hover{
   <a href="contacto.html">Contacto</a>
 </nav>
 
+<!-- 🔥 HEADER CORREGIDO -->
 <div class="header">
-  <h1>Catálogo</h1>
-  <p>Galería de equipos y maniobras</p>
+  <div class="header-card">
+    <h1>Catálogo</h1>
+    <p>Galería de equipos y maniobras</p>
+  </div>
 </div>
 
 <section class="grid">
