@@ -16,9 +16,11 @@
 
 body{
   background:
-    radial-gradient(circle at top, rgba(37,211,102,0.10), transparent 45%),
-    radial-gradient(circle at bottom, rgba(255,255,255,0.03), transparent 55%),
-    #0b0f14;
+    linear-gradient(rgba(11,15,20,0.85), rgba(11,15,20,0.95)),
+    url('https://res.cloudinary.com/deod0oalc/image/upload/Gemini_Generated_Image_un76myun76myun76_ngpgxa.png');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
   color:white;
 }
 
@@ -104,13 +106,13 @@ nav a:hover{
 .card{
   max-width:440px;
   margin:45px auto;
-  background:rgba(255,255,255,0.04);
+  background:rgba(0,0,0,0.55);
   border:1px solid rgba(255,255,255,0.08);
   border-radius:16px;
   padding:28px;
   text-align:center;
   backdrop-filter:blur(12px);
-  box-shadow:0 25px 50px rgba(0,0,0,0.45);
+  box-shadow:0 25px 50px rgba(0,0,0,0.6);
 }
 
 .card h2{
@@ -205,6 +207,10 @@ nav a:hover{
   .card{
     width:90%;
   }
+
+  body{
+    background-attachment:scroll; /* mejora rendimiento en celular */
+  }
 }
 
 </style>
@@ -248,7 +254,6 @@ nav a:hover{
     📞 Llamar ahora
   </a>
 
-  <!-- 🔥 CORREO CORREGIDO (SIEMPRE FUNCIONA) -->
   <a class="btn mail" href="https://mail.google.com/mail/?view=cm&fs=1&to=gruascr21@gmail.com&su=Solicitud%20de%20información&body=Hola,%20me%20interesa%20cotizar%20un%20servicio%20de%20grúa." target="_blank">
     ✉️ Enviar correo
   </a>
